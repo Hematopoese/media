@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .alerta{
+            margin-top: 20px;
+            display: none;
+        }
+        .calculadora{
+            margin-top: 50px;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="conteiner">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="calculadora col-lg-4">
+                <h2>Calculadora de média:</h2>
+                <form action="" id="formulario">
+                    <div class="form-group">
+                        <label>NOTA 1:</label>
+                        <input type="text" id="n1" onkeypress="$(this).mask('00')" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>NOTA 2:</label>
+                        <input type="text" id="n2" onkeypress="$(this).mask('00')" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>NOTA 3:</label>
+                        <input type="text" id="n3" onkeypress="$(this).mask('00')" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>NOTA 4:</label>
+                        <input type="text" id="n4" onkeypress="$(this).mask('00')" class="form-control" required>
+                    </div>
+                    <hr>
+                    <button type="button" class="btn btn-primary" onclick="media()">Tirar média</button>
+                </form>
+                <div id="res" class="alerta alert alert-success" role="alert">
+                    Resultado
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        function media(){
+            var n1 = window.document.getElementById('n1')
+            var n2 = window.document.getElementById('n2')
+            var n3 = window.document.getElementById('n3')
+            var n4 = window.document.getElementById('n4')
+            var res = window.document.getElementById('res')
+        
+            var nt1 = Number(n1.value)
+            var nt2 = Number(n1.value)
+            var nt3 = Number(n3.value)
+            var nt4 = Number(n4.value)
+        
+            var media = (nt1 + nt2 + nt3 + nt4) / 4
+        
+            res.innerHTML = `A media das notas é ${media}`
+            res.style.display = 'block'
+
+            card.innerHTML = media>= 6?"Aprovado":"Reprovado"
+            card.styçe.display = 'block'
+
+            
+        
+        }
+        
+        </script>
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/jQuery-Mask/dist/jquery.mask.min.js"></script>
+</body>
+</html>
